@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fake Job Detector AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🛡️ Fake Job Detector AI</h1>
+
+<p>Enter Job Description</p>
+
+
+<form action="/predict" method="POST">
+
+<textarea 
+name="job_description"
+placeholder="Paste job description here..."></textarea>
+
+
+<br>
+
+<button type="submit">
+Analyze Job
+</button>
+
+</form>
+
+
+{% if prediction %}
+
+<div class="result {% if 'Real' in prediction %}real{% else %}fake{% endif %}">
+
+<h2>{{ prediction }}</h2>
+
+<h3>
+Confidence: {{ confidence }}%
+</h3>
+
+</div>
+
+{% endif %}
+
+
+</div>
+
+</body>
+
+</html>
