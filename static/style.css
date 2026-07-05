@@ -3,7 +3,6 @@ body{
     font-family: Arial, sans-serif;
 }
 
-
 .container{
     width: 500px;
     margin: 100px auto;
@@ -14,11 +13,9 @@ body{
     box-shadow: 0px 0px 20px #333;
 }
 
-
 h1{
     color:#333;
 }
-
 
 textarea{
     width:90%;
@@ -27,8 +24,8 @@ textarea{
     border-radius:15px;
     border:2px solid #ddd;
     font-size:15px;
+    resize:none;
 }
-
 
 button{
     margin-top:20px;
@@ -39,13 +36,12 @@ button{
     color:white;
     font-size:16px;
     cursor:pointer;
+    transition:0.3s;
 }
-
 
 button:hover{
     background:#764ba2;
 }
-
 
 .result{
     margin-top:25px;
@@ -55,24 +51,39 @@ button:hover{
     box-shadow:0px 0px 10px #ccc;
 }
 
-
 .real{
     background:#e8f5e9;
     color:#008000;
 }
-
 
 .fake{
     background:#ffe5e5;
     color:#b30000;
 }
 
+/* New style for Invalid Job Posting */
+.invalid{
+    background:#fff8e1;
+    color:#b8860b;
+}
 
 .result h2{
     margin:5px;
 }
 
-
 .result h3{
     margin:5px;
+}
+
+.result p{
+    margin-top:10px;
+    line-height:1.6;
+    font-weight:normal;
+    color:#333;
+}
+
+.result hr{
+    margin:15px 0;
+    border:none;
+    border-top:1px solid #ddd;
 }

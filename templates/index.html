@@ -16,13 +16,11 @@
 
 <p>Enter Job Description</p>
 
-
 <form action="/predict" method="POST">
 
-<textarea 
+<textarea
 name="job_description"
 placeholder="Paste job description here..."></textarea>
-
 
 <br>
 
@@ -32,10 +30,9 @@ Analyze Job
 
 </form>
 
-
 {% if prediction %}
 
-<div class="result {% if 'Real' in prediction %}real{% else %}fake{% endif %}">
+<div class="result {% if 'Real' in prediction %}real{% elif 'Invalid' in prediction %}invalid{% else %}fake{% endif %}">
 
 <h2>{{ prediction }}</h2>
 
@@ -43,10 +40,17 @@ Analyze Job
 Confidence: {{ confidence }}%
 </h3>
 
+{% if recommendation %}
+<hr>
+
+<h3> Recommendation</h3>
+
+<p>{{ recommendation }}</p>
+{% endif %}
+
 </div>
 
 {% endif %}
-
 
 </div>
 
